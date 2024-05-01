@@ -3,14 +3,14 @@ import Opinion from "../models/opinions.model.js";
 
 export const uploadMyImage =  async (req, res) => {
     
-    const {name, profession, rating, opinion } = req.body.data;
+    const {name, profession, rating, opinion, image } = req.body.data;
 
     const newOpinion = new Opinion({
         name,
         profession,
         rating,
         opinion,
-        // image: url
+        image
     });
 
     const savedOpinion = await newOpinion.save()
